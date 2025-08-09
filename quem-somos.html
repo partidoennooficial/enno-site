@@ -5,77 +5,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ENNO - Quem Somos</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f1f5f4;
-      color: #1c1c1c;
+    /* Reset e fontes */
+    body, html {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(3, 37, 65, 0.85), rgba(3, 37, 65, 0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e6d2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
     header {
-      background-color: #006400; /* Verde escuro patriótico */
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 2px solid #d4af37;
     }
+
     header img {
-      max-width: 120px;
+      max-width: 130px;
       margin-bottom: 1rem;
+      filter: drop-shadow(0 0 3px #d4af37);
     }
+
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       margin: 0;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #d4af37;
+      text-shadow: 0 0 7px #d4af37;
     }
+
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-      color: #e0ffe0;
+      margin-top: 0.4rem;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #fff9e3;
+      letter-spacing: 1px;
     }
+
     nav {
-      background-color: #004d00;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      font-weight: bold;
-      text-decoration: none;
+      background-color: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      font-weight: 600;
       font-size: 1.1rem;
+      border-bottom: 1px solid #d4af37;
+      flex-wrap: wrap;
     }
+
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
     nav a:hover {
+      color: #fff;
       text-decoration: underline;
     }
+
     main {
-      padding: 2rem;
+      flex: 1;
       max-width: 900px;
-      margin: auto;
+      margin: 3rem auto 4rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #d4af37aa;
     }
-    h2, h3 {
-      color: #006400;
-    }
-    ul {
-      list-style: inside disc;
-      padding-left: 0;
-    }
-    footer {
-      background-color: #1c1c1c;
-      color: white;
+
+    main h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffd54f;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      text-shadow: 0 0 6px #d4af37;
     }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h3 {
+      font-size: 1.9rem;
+      margin-bottom: 0.8rem;
+      color: #ffe082;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 6px;
+      text-shadow: 0 0 4px #d4af37;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    ul li {
+      background: #d4af37;
+      color: #003366;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 0 6px #d4af37aa;
+      flex: 1 1 calc(50% - 1.2rem);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    ul li::before {
+      content: "✝️";
+      font-size: 1.1rem;
+    }
+
+    .btn-join {
+      display: block;
+      width: max-content;
+      margin: 2rem auto 0;
+      background-color: #d4af37;
+      color: #003366;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 0.8rem 2.4rem;
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #d4af37bb;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-join:hover {
+      background-color: #ffc107;
+      color: #001933;
+      box-shadow: 0 0 20px #ffc107cc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 1rem;
+      background-color: rgba(0,0,0,0.4);
+      color: #d4af37;
+      font-weight: 600;
+      border-top: 2px solid #d4af37;
+    }
+
     @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      header p, main p { font-size: 1rem; }
-      nav a { display: block; margin: 0.5rem 0; }
+      nav {
+        gap: 1rem;
+        font-size: 1rem;
+      }
+      main {
+        margin: 2rem 1rem 3rem;
+        padding: 1.5rem 1rem;
+      }
+      main h2 {
+        font-size: 2rem;
+      }
+      section h3 {
+        font-size: 1.5rem;
+      }
+      ul li {
+        flex: 1 1 100%;
+      }
+      .btn-join {
+        font-size: 1.1rem;
+        padding: 0.7rem 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo-enno.png" alt="Logo da ENNO" />
+    <img src="logo-enno.png" alt="Logo ENNO" />
     <h1>ENNO</h1>
     <p>Uma nova geração, um novo Brasil.</p>
   </header>
@@ -92,25 +209,34 @@
 
   <main>
     <h2>Quem Somos</h2>
-    <p>A ENNO — Partido Nacional Novo de Oportunidades — nasce da necessidade urgente de transformar a política brasileira, trazendo uma nova geração comprometida com a fé, a integridade e a justiça social. Somos a voz da juventude cristã que quer construir um Brasil de oportunidades para todos.</p>
 
-    <h3>Missão e Valores</h3>
-    <p><strong>Missão:</strong> Capacitar líderes jovens que transformem o Brasil a partir dos valores cristãos, promovendo justiça, família e desenvolvimento sustentável.</p>
-    <ul>
-      <li>Fé inabalável em Deus</li>
-      <li>Integridade acima de tudo</li>
-      <li>Compromisso com a verdade e justiça</li>
-      <li>Valorização da família e da vida</li>
-      <li>Respeito e oportunidades para a juventude</li>
-    </ul>
+    <section>
+      <h3>Nossa História</h3>
+      <p>A ENNO – Partido Nacional Novo de Oportunidades – nasceu do chamado divino para transformar o Brasil, trazendo uma nova geração comprometida com a fé em Jesus Cristo, integridade e justiça social. Somos jovens movidos pelo Espírito Santo, prontos para liderar a mudança que o país precisa.</p>
+    </section>
 
-    <h3>Nosso Presidente</h3>
-    <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil rumo à renovação política e espiritual. Com coragem e fé, ele lidera um movimento que quer resgatar os princípios cristãos na política nacional.</p>
+    <section>
+      <h3>Missão e Valores</h3>
+      <ul>
+        <li>Fé inabalável em Deus</li>
+        <li>Integridade acima de tudo</li>
+        <li>Compromisso com a verdade e justiça</li>
+        <li>Valorização da família e da vida</li>
+        <li>Respeito e oportunidades para a juventude</li>
+      </ul>
+    </section>
 
-    <h3>Compromisso com o Brasil</h3>
-    <p>Acreditamos que a verdadeira mudança nasce do povo e para o povo. Por isso, nos comprometemos a ouvir, representar e lutar por cada cidadão brasileiro, especialmente os jovens e famílias que buscam esperança e justiça.</p>
+    <section>
+      <h3>Nosso Presidente</h3>
+      <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil rumo à renovação política e espiritual. Com coragem, fé e a palavra de Deus, ele inspira uma geração a ser protagonista da transformação nacional.</p>
+    </section>
 
-    <p><strong>Venha fazer parte dessa revolução cristã pela justiça e transformação. Junte-se à ENNO e seja protagonista do futuro do Brasil!</strong></p>
+    <section>
+      <h3>Compromisso com o Brasil</h3>
+      <p>Acreditamos que a verdadeira mudança nasce do povo e para o povo. Por isso, nos comprometemos a ouvir, representar e lutar por cada cidadão brasileiro, especialmente jovens e famílias que buscam esperança e justiça.</p>
+    </section>
+
+    <a href="junte-se.html" class="btn-join">Junte-se ao Movimento</a>
   </main>
 
   <footer>
