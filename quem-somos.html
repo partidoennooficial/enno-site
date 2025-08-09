@@ -3,23 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ENNO - [Quem somos]</title>
-  
-  <!-- CSS inline no head -->
+  <title>ENNO - Quem Somos</title>
   <style>
-    /* Aqui você copia e cola todo o seu CSS que estava no style do HTML original */
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       background-color: #f1f5f4;
       color: #1c1c1c;
     }
-    /* resto do CSS... */
+    header {
+      background-color: #006400; /* Verde escuro patriótico */
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      max-width: 120px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #e0ffe0;
+    }
+    nav {
+      background-color: #004d00;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2, h3 {
+      color: #006400;
+    }
+    ul {
+      list-style: inside disc;
+      padding-left: 0;
+    }
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      header p, main p { font-size: 1rem; }
+      nav a { display: block; margin: 0.5rem 0; }
+    }
   </style>
 </head>
 <body>
-  
-  <!-- Menu (copiado igual em todos) -->
+
+  <header>
+    <img src="logo-enno.png" alt="Logo da ENNO" />
+    <h1>ENNO</h1>
+    <p>Uma nova geração, um novo Brasil.</p>
+  </header>
+
   <nav>
     <a href="index.html">Início</a>
     <a href="quem-somos.html">Quem Somos</a>
@@ -31,29 +91,31 @@
   </nav>
 
   <main>
-  <h2>Quem Somos</h2>
-  <p>A ENNO — Partido Nacional Novo de Oportunidades — nasce da necessidade urgente de transformar a política brasileira, trazendo uma nova geração comprometida com a fé, a integridade e a justiça social. Somos a voz da juventude cristã que quer construir um Brasil de oportunidades para todos.</p>
+    <h2>Quem Somos</h2>
+    <p>A ENNO — Partido Nacional Novo de Oportunidades — nasce da necessidade urgente de transformar a política brasileira, trazendo uma nova geração comprometida com a fé, a integridade e a justiça social. Somos a voz da juventude cristã que quer construir um Brasil de oportunidades para todos.</p>
 
-  <h3>Missão e Valores</h3>
-  <p><strong>Missão:</strong> Capacitar líderes jovens que transformem o Brasil a partir dos valores cristãos, promovendo justiça, família e desenvolvimento sustentável.</p>
-  <ul>
-    <li>Fé inabalável em Deus</li>
-    <li>Integridade acima de tudo</li>
-    <li>Compromisso com a verdade e justiça</li>
-    <li>Valorização da família e da vida</li>
-    <li>Respeito e oportunidades para a juventude</li>
-  </ul>
+    <h3>Missão e Valores</h3>
+    <p><strong>Missão:</strong> Capacitar líderes jovens que transformem o Brasil a partir dos valores cristãos, promovendo justiça, família e desenvolvimento sustentável.</p>
+    <ul>
+      <li>Fé inabalável em Deus</li>
+      <li>Integridade acima de tudo</li>
+      <li>Compromisso com a verdade e justiça</li>
+      <li>Valorização da família e da vida</li>
+      <li>Respeito e oportunidades para a juventude</li>
+    </ul>
 
-  <h3>Nosso Presidente</h3>
-  <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil rumo à renovação política e espiritual. Com coragem e fé, ele lidera um movimento que quer resgatar os princípios cristãos na política nacional.</p>
+    <h3>Nosso Presidente</h3>
+    <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil rumo à renovação política e espiritual. Com coragem e fé, ele lidera um movimento que quer resgatar os princípios cristãos na política nacional.</p>
 
-  <h3>Compromisso com o Brasil</h3>
-  <p>Acreditamos que a verdadeira mudança nasce do povo e para o povo. Por isso, nos comprometemos a ouvir, representar e lutar por cada cidadão brasileiro, especialmente os jovens e famílias que buscam esperança e justiça.</p>
+    <h3>Compromisso com o Brasil</h3>
+    <p>Acreditamos que a verdadeira mudança nasce do povo e para o povo. Por isso, nos comprometemos a ouvir, representar e lutar por cada cidadão brasileiro, especialmente os jovens e famílias que buscam esperança e justiça.</p>
 
-  <p><strong>Venha fazer parte dessa revolução cristã pela justiça e transformação. Junte-se à ENNO e seja protagonista do futuro do Brasil!</strong></p>
+    <p><strong>Venha fazer parte dessa revolução cristã pela justiça e transformação. Junte-se à ENNO e seja protagonista do futuro do Brasil!</strong></p>
+  </main>
 
-</main>
-
+  <footer>
+    <p>© 2025 ENNO - Partido Nacional Novo de Oportunidades. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
