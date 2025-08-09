@@ -5,66 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ENNO - Partido Cristão Jovem e Nacional de Oportunidades | Dr.Rique</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f1f5f4;
-      color: #1c1c1c;
+    /* Reset e base */
+    body, html {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(3, 37, 65, 0.85), rgba(3, 37, 65, 0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e6d2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+
     header {
-      background-color: #006400; /* Verde escuro patriótico */
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 2px solid #d4af37;
+      position: relative;
     }
+
     header img {
-      max-width: 120px;
+      max-width: 130px;
       margin-bottom: 1rem;
+      filter: drop-shadow(0 0 3px #d4af37);
     }
+
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       margin: 0;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #d4af37;
+      text-shadow: 0 0 7px #d4af37;
     }
+
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-      color: #e0ffe0;
+      margin-top: 0.4rem;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #fff9e3;
+      letter-spacing: 1px;
     }
+
+    /* Botão Hambúrguer */
+    .menu-toggle {
+      position: absolute;
+      top: 2.5rem;
+      right: 1.5rem;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background: #d4af37;
+      border-radius: 3px;
+      box-shadow: 0 0 6px #d4af37aa;
+      transition: all 0.3s ease;
+    }
+
+    /* Navegação escondida */
     nav {
-      background-color: #004d00;
-      padding: 1rem;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 220px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      box-shadow: -3px 0 10px rgba(212, 175, 55, 0.7);
+      padding-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
     }
+
+    nav.open {
+      right: 0;
+    }
+
     nav a {
-      color: white;
-      margin: 0 1rem;
-      font-weight: bold;
+      color: #d4af37;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 0.5rem 1.5rem;
+      transition: background-color 0.2s ease;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      background-color: #d4af37;
+      color: #003366;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #d4af37bb;
     }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #d4af37aa;
     }
-    h2 {
-      color: #006400;
-    }
-    footer {
-      background-color: #1c1c1c;
-      color: white;
+
+    main h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffd54f;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      text-shadow: 0 0 6px #d4af37;
     }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      header p, section p { font-size: 1rem; }
-      nav a { display: block; margin: 0.5rem 0; }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      margin-bottom: 0.8rem;
+      color: #ffe082;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 6px;
+      text-shadow: 0 0 4px #d4af37;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 1rem;
+      background-color: rgba(0,0,0,0.4);
+      color: #d4af37;
+      font-weight: 600;
+      border-top: 2px solid #d4af37;
+      user-select: none;
+    }
+
+    /* Para quando menu aberto, bloqueia scroll */
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      /* Menu visível na horizontal em desktop */
+      nav {
+        position: static;
+        height: auto;
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        right: 0 !important;
+      }
+      nav a {
+        color: #d4af37;
+        padding: 0 1rem;
+        font-size: 1.1rem;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      main {
+        margin-top: 2rem;
+      }
     }
   </style>
 </head>
@@ -74,9 +191,14 @@
     <img src="logo-enno.png" alt="Logo da ENNO" />
     <h1>ENNO</h1>
     <p>Uma nova geração, um novo Brasil.</p>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <nav>
+  <nav id="nav-menu">
     <a href="index.html">Início</a>
     <a href="quem-somos.html">Quem Somos</a>
     <a href="propostas.html">Propostas</a>
@@ -86,29 +208,64 @@
     <a href="contato.html">Contato</a>
   </nav>
 
-  <section>
-    <h2>Bem-vindo à ENNO</h2>
-    <p>O Partido Nacional Novo de Oportunidades nasce com o compromisso de renovar a política brasileira com fé, integridade e visão. Nosso foco é capacitar a juventude, defender os princípios cristãos e promover um Brasil de oportunidades reais para todos.</p>
-  </section>
+  <main>
+    <section>
+      <h2>Bem-vindo à ENNO</h2>
+      <p>O Partido Nacional Novo de Oportunidades nasce com o compromisso de renovar a política brasileira com fé, integridade e visão. Nosso foco é capacitar a juventude, defender os princípios cristãos e promover um Brasil de oportunidades reais para todos.</p>
+    </section>
 
-  <section>
-    <h2>Nosso Presidente</h2>
-    <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil. Comprometido com a verdade, justiça e transformação social, seu lema é: “Deus, Pátria, Propósito”.</p>
-  </section>
+    <section>
+      <h2>Nosso Presidente</h2>
+      <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil. Comprometido com a verdade, justiça e transformação social, seu lema é: “Deus, Pátria, Propósito”.</p>
+    </section>
 
-  <section>
-    <h2>Manifesto</h2>
-    <p>A ENNO acredita em um Brasil onde a fé e a política caminham juntas. Lutamos por justiça social, liberdade, educação de qualidade, segurança e reconstrução dos valores familiares. Nosso movimento nasce do povo e para o povo.</p>
-  </section>
+    <section>
+      <h2>Manifesto</h2>
+      <p>A ENNO acredita em um Brasil onde a fé e a política caminham juntas. Lutamos por justiça social, liberdade, educação de qualidade, segurança e reconstrução dos valores familiares. Nosso movimento nasce do povo e para o povo.</p>
+    </section>
 
-  <section>
-    <h2>Contato</h2>
-    <p>Email oficial: <a href="mailto:dr.rique@partidoenno.online">dr.rique@partidoenno.online</a></p>
-  </section>
+    <section>
+      <h2>Contato</h2>
+      <p>Email oficial: <a href="mailto:dr.rique@partidoenno.online" style="color:#d4af37; text-decoration: underline;">dr.rique@partidoenno.online</a></p>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 ENNO - Partido Nacional Novo de Oportunidades. Todos os direitos reservados.</p>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    function toggleMenu() {
+      navMenu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Fecha menu ao clicar em link
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    // Fecha menu ao clicar fora (mobile)
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  </script>
 </body>
 </html>
