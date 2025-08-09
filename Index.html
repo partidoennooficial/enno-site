@@ -4,163 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ENNO - Partido Cristão Jovem e Nacional de Oportunidades | Dr.Rique</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
       background-color: #f1f5f4;
       color: #1c1c1c;
-      line-height: 1.6;
     }
-
     header {
-      background-color: #006400;
-      color: #fff;
-      padding: 1.5rem 1rem;
+      background-color: #006400; /* Verde escuro patriótico */
+      color: white;
+      padding: 2rem 1rem;
       text-align: center;
-      position: relative;
     }
-
     header img {
       max-width: 120px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
-
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+      font-size: 2.8rem;
+      margin: 0;
     }
-
     header p {
-      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
       color: #e0ffe0;
     }
-
-    /* NAVBAR FIXA NO TOPO */
     nav {
       background-color: #004d00;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 1rem;
+      text-align: center;
     }
-
     nav a {
-      color: #e0ffe0;
+      color: white;
+      margin: 0 1rem;
+      font-weight: bold;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      font-size: 1.1rem;
     }
-
     nav a:hover {
-      color: #a0f0a0;
+      text-decoration: underline;
     }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
     section {
-      margin-bottom: 3rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
-
     h2 {
       color: #006400;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      border-bottom: 3px solid #006400;
-      padding-bottom: 0.3rem;
-      width: fit-content;
     }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    /* Botão CTA para engajamento */
-    .btn-cta {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background-color: #006400;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 4px 6px rgba(0, 100, 0, 0.5);
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-cta:hover {
-      background-color: #004d00;
-    }
-
-    /* Formulário simples */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 400px;
-    }
-
-    input, textarea {
-      padding: 0.7rem;
-      border: 1px solid #006400;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-
-    input[type="submit"] {
-      background-color: #006400;
-      color: white;
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #004d00;
-    }
-
     footer {
       background-color: #1c1c1c;
       color: white;
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 1rem;
+      margin-top: 2rem;
       font-size: 0.9rem;
     }
-
-    /* Responsividade */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      nav {
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
+      header h1 { font-size: 2rem; }
+      header p, section p { font-size: 1rem; }
+      nav a { display: block; margin: 0.5rem 0; }
     }
   </style>
 </head>
@@ -173,65 +77,34 @@
   </header>
 
   <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#presidente">Presidente</a>
-    <a href="#manifesto">Manifesto</a>
-    <a href="#propostas">Propostas</a>
-    <a href="#junte-se">Junte-se a Nós</a>
-    <a href="#fe">Fé & Oração</a>
-    <a href="#contato">Contato</a>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="propostas.html">Propostas</a>
+    <a href="noticias.html">Notícias</a>
+    <a href="junte-se.html">Junte-se a Nós</a>
+    <a href="fe-e-oracao.html">Fé & Oração</a>
+    <a href="contato.html">Contato</a>
   </nav>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre a ENNO</h2>
-      <p>O Partido Nacional Novo de Oportunidades nasce com o compromisso de renovar a política brasileira com fé, integridade e visão. Nosso foco é capacitar a juventude, defender os princípios cristãos e promover um Brasil de oportunidades reais para todos.</p>
-    </section>
+  <section>
+    <h2>Bem-vindo à ENNO</h2>
+    <p>O Partido Nacional Novo de Oportunidades nasce com o compromisso de renovar a política brasileira com fé, integridade e visão. Nosso foco é capacitar a juventude, defender os princípios cristãos e promover um Brasil de oportunidades reais para todos.</p>
+  </section>
 
-    <section id="presidente">
-      <h2>Nosso Presidente</h2>
-      <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil. Comprometido com a verdade, justiça e transformação social, seu lema é: “Deus, Pátria, Propósito”.</p>
-    </section>
+  <section>
+    <h2>Nosso Presidente</h2>
+    <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil. Comprometido com a verdade, justiça e transformação social, seu lema é: “Deus, Pátria, Propósito”.</p>
+  </section>
 
-    <section id="manifesto">
-      <h2>Manifesto</h2>
-      <p>A ENNO acredita em um Brasil onde a fé e a política caminham juntas. Lutamos por justiça social, liberdade, educação de qualidade, segurança e reconstrução dos valores familiares. Nosso movimento nasce do povo e para o povo.</p>
-    </section>
+  <section>
+    <h2>Manifesto</h2>
+    <p>A ENNO acredita em um Brasil onde a fé e a política caminham juntas. Lutamos por justiça social, liberdade, educação de qualidade, segurança e reconstrução dos valores familiares. Nosso movimento nasce do povo e para o povo.</p>
+  </section>
 
-    <section id="propostas">
-      <h2>Propostas</h2>
-      <ul>
-        <li>Educação integral baseada em valores cristãos.</li>
-        <li>Segurança pública reforçada com foco em proteção da família.</li>
-        <li>Economia de oportunidades para todos, especialmente a juventude.</li>
-        <li>Valorização da vida e da dignidade humana desde a concepção.</li>
-        <li>Combate à corrupção com transparência e responsabilidade.</li>
-      </ul>
-    </section>
-
-    <section id="junte-se">
-      <h2>Junte-se a Nós</h2>
-      <p>Quer fazer parte da revolução política cristã que vai transformar o Brasil? Preencha o formulário abaixo e entre para a ENNO.</p>
-      <form action="#" method="POST">
-        <input type="text" name="nome" placeholder="Seu nome completo" required />
-        <input type="email" name="email" placeholder="Seu email" required />
-        <textarea name="mensagem" placeholder="Por que você quer se juntar?" rows="4" required></textarea>
-        <input type="submit" value="Enviar" />
-      </form>
-    </section>
-
-    <section id="fe">
-      <h2>Fé & Oração</h2>
-      <p>"Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento." — Provérbios 3:5 🙏</p>
-      <p>Que esta palavra fortaleça nosso propósito e renove nossa esperança. Estamos juntos na batalha espiritual e política!</p>
-      <a href="#junte-se" class="btn-cta">Junte-se a Nós e Faça a Diferença!</a>
-    </section>
-
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Email oficial: <a href="mailto:dr.rique@partidoenno.online">dr.rique@partidoenno.online</a></p>
-    </section>
-  </main>
+  <section>
+    <h2>Contato</h2>
+    <p>Email oficial: <a href="mailto:dr.rique@partidoenno.online">dr.rique@partidoenno.online</a></p>
+  </section>
 
   <footer>
     <p>© 2025 ENNO - Partido Nacional Novo de Oportunidades. Todos os direitos reservados.</p>
