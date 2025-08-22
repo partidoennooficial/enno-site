@@ -1,271 +1,292 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ENNO - Partido Cristão Jovem e Nacional de Oportunidades | Dr.Rique</title>
-  <style>
-    /* Reset e base */
-    body, html {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(3, 37, 65, 0.85), rgba(3, 37, 65, 0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #f0e6d2;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      border-bottom: 2px solid #d4af37;
-      position: relative;
-    }
+<!-- SEO -->
+<title>ENNO - Partido Cristão Jovem e Nacional de Oportunidades</title>
+<meta name="description" content="ENNO é o partido cristão jovem que transforma o Brasil com fé, integridade e liderança visionária. Conheça nossa missão, equipe e apoie nossa causa.">
+<meta name="keywords" content="ENNO, partido cristão jovem, política jovem Brasil, liderança cristã, fé, integridade, Dr.Rique">
+<meta name="robots" content="index, follow">
 
-    header img {
-      max-width: 130px;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 3px #d4af37);
-    }
+<!-- Open Graph / Social Sharing -->
+<meta property="og:title" content="ENNO - Partido Cristão Jovem e Nacional de Oportunidades">
+<meta property="og:description" content="ENNO transforma o Brasil com fé, coragem e integridade. Conheça nossa missão, equipe e apoie nossa causa.">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/78/Pal%C3%A1cio_do_Planalto_GGFD8938.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.enno.com.br/">
 
-    header h1 {
-      font-size: 3.2rem;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #d4af37;
-      text-shadow: 0 0 7px #d4af37;
-    }
+<!-- Favicon (opcional) -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    header p {
-      margin-top: 0.4rem;
-      font-size: 1.3rem;
-      font-style: italic;
-      color: #fff9e3;
-      letter-spacing: 1px;
-    }
+<style>
+/* Reset e overflow */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+html, body { overflow-x: hidden; scroll-behavior: smooth; }
+body { background: linear-gradient(135deg, #f5f7fa, #d4edda); color: #111; }
 
-    /* Botão Hambúrguer */
-    .menu-toggle {
-      position: absolute;
-      top: 2.5rem;
-      right: 1.5rem;
-      width: 30px;
-      height: 25px;
-      cursor: pointer;
-      z-index: 1001;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+/* Header fixo e menu hamburguer */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e682f;
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .menu-toggle span {
-      display: block;
-      height: 3px;
-      background: #d4af37;
-      border-radius: 3px;
-      box-shadow: 0 0 6px #d4af37aa;
-      transition: all 0.3s ease;
-    }
+.menu-logo { color:#fff; font-weight:bold; font-size:1.3rem; }
 
-    /* Navegação escondida */
-    nav {
-      position: fixed;
-      top: 0;
-      right: -250px;
-      width: 220px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      box-shadow: -3px 0 10px rgba(212, 175, 55, 0.7);
-      padding-top: 5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      transition: right 0.3s ease;
-      z-index: 1000;
-    }
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
 
-    nav.open {
-      right: 0;
-    }
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 3px;
+  transition: 0.3s;
+}
 
-    nav a {
-      color: #d4af37;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      padding: 0.5rem 1.5rem;
-      transition: background-color 0.2s ease;
-    }
+.menu-container {
+  display: flex;
+  gap: 20px;
+}
 
-    nav a:hover {
-      background-color: #d4af37;
-      color: #003366;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #d4af37bb;
-    }
+.menu-container a {
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
 
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: 3rem auto 4rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2.5rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #d4af37aa;
-    }
+.menu-container a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
 
-    main h2 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #ffd54f;
-      text-align: center;
-      text-shadow: 0 0 6px #d4af37;
-    }
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/7/78/Pal%C3%A1cio_do_Planalto_GGFD8938.jpg') center/cover no-repeat;
+  color: #fff;
+  position: relative;
+  margin-top: 60px;
+}
+.hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.hero-content { position: relative; z-index: 1; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { font-size: 1.5rem; margin-bottom: 30px; }
+.hero a {
+  padding: 15px 30px;
+  background: #28a745;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.hero a:hover { background: #218838; }
 
-    section {
-      margin-bottom: 2rem;
-    }
+/* Sections */
+section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+section h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1e682f; }
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+.card h3 { margin-bottom: 20px; color: #1e682f; }
+.card p { line-height: 1.6; }
 
-    section h2 {
-      margin-bottom: 0.8rem;
-      color: #ffe082;
-      border-bottom: 2px solid #d4af37;
-      padding-bottom: 6px;
-      text-shadow: 0 0 4px #d4af37;
-    }
+/* Missão */
+.mission { background: #d4edda; border-radius: 20px; padding: 50px 20px; text-align: center; }
+.mission p { font-size: 1.2rem; }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
+/* Doação */
+#donate p { text-align: center; margin-bottom: 30px; }
+#donate a {
+  display: inline-block;
+  padding: 20px 40px;
+  background: #28a745;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+#donate a:hover { background: #218838; }
 
-    footer {
-      text-align: center;
-      padding: 1rem 1rem;
-      background-color: rgba(0,0,0,0.4);
-      color: #d4af37;
-      font-weight: 600;
-      border-top: 2px solid #d4af37;
-      user-select: none;
-    }
+/* Contato */
+.contact form { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: auto; }
+.contact input, .contact textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+.contact button {
+  padding: 15px;
+  background: #1e682f;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact button:hover { background: #145c23; }
 
-    /* Para quando menu aberto, bloqueia scroll */
-    body.menu-open {
-      overflow: hidden;
-    }
+/* Footer */
+footer {
+  background: #1e682f;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
 
-    @media (min-width: 768px) {
-      /* Menu visível na horizontal em desktop */
-      nav {
-        position: static;
-        height: auto;
-        width: 100%;
-        background: transparent;
-        box-shadow: none;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0;
-        right: 0 !important;
-      }
-      nav a {
-        color: #d4af37;
-        padding: 0 1rem;
-        font-size: 1.1rem;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      main {
-        margin-top: 2rem;
-      }
-    }
-  </style>
+/* Responsivo Mobile */
+@media(max-width:768px){
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1.2rem; }
+  .cards { flex-direction: column; gap: 20px; }
+
+  .menu-container { 
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #1e682f;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  .menu-container.active { left: 0; }
+
+  .menu-toggle { display: flex; }
+}
+</style>
 </head>
 <body>
+<header>
+  <div class="menu-logo">ENNO</div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="menu-container" id="mobile-menu">
+    <a href="#home" class="menu-item" onclick="closeMenu()">Início</a>
+    <a href="#about" class="menu-item" onclick="closeMenu()">Sobre</a>
+    <a href="#mission" class="menu-item" onclick="closeMenu()">Missão</a>
+    <a href="#team" class="menu-item" onclick="closeMenu()">Equipe</a>
+    <a href="#donate" class="menu-item" onclick="closeMenu()">Doação</a>
+    <a href="#contact" class="menu-item" onclick="closeMenu()">Contato</a>
+  </div>
+</header>
 
-  <header>
-    <img src="logo-enno.png" alt="Logo da ENNO" />
-    <h1>ENNO</h1>
-    <p>Uma nova geração, um novo Brasil.</p>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>ENNO - O Futuro da Política Cristã Jovem</h1>
+    <p>Renovando o Brasil com fé, coragem e integridade.</p>
+    <a href="#mission">Junte-se a nós</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Sobre a ENNO</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Quem Somos</h3>
+      <p>Somos um partido jovem, cristão, que acredita no poder da fé e da integridade para transformar o Brasil.</p>
     </div>
-  </header>
+    <div class="card">
+      <h3>Nossa Visão</h3>
+      <p>Construir uma nação justa, com oportunidades para todos, valorizando princípios cristãos e cidadãos engajados.</p>
+    </div>
+    <div class="card">
+      <h3>Nossos Valores</h3>
+      <p>Fé, Transparência, Juventude, Liderança e Compromisso com o futuro do país.</p>
+    </div>
+  </div>
+</section>
 
-  <nav id="nav-menu">
-    <a href="index.html">Início</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="propostas.html">Propostas</a>
-    <a href="noticias.html">Notícias</a>
-    <a href="junte-se.html">Junte-se a Nós</a>
-    <a href="fe-e-oracao.html">Fé & Oração</a>
-    <a href="contato.html">Contato</a>
-  </nav>
+<section class="mission" id="mission">
+  <h2>Missão</h2>
+  <p>Ser a voz da juventude cristã, promovendo políticas que transformem vidas e fortaleçam a esperança de um Brasil melhor, seguindo os princípios de Deus.</p>
+</section>
 
-  <main>
-    <section>
-      <h2>Bem-vindo à ENNO</h2>
-      <p>O Partido Nacional Novo de Oportunidades nasce com o compromisso de renovar a política brasileira com fé, integridade e visão. Nosso foco é capacitar a juventude, defender os princípios cristãos e promover um Brasil de oportunidades reais para todos.</p>
-    </section>
+<section id="team">
+  <h2>Equipe ENNO</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Dr.Rique</h3>
+      <p>Fundador e líder visionário. Um chamado profético para liderar com fé e coragem.</p>
+    </div>
+    <div class="card">
+      <h3>Equipe de Estratégia</h3>
+      <p>Profissionais dedicados a implementar políticas e projetos inovadores e cristãos.</p>
+    </div>
+    <div class="card">
+      <h3>Voluntários</h3>
+      <p>Jovens engajados que acreditam no propósito da ENNO e estão prontos para servir.</p>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Nosso Presidente</h2>
-      <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil. Comprometido com a verdade, justiça e transformação social, seu lema é: “Deus, Pátria, Propósito”.</p>
-    </section>
+<section id="donate">
+  <h2>Faça uma Doação</h2>
+  <p>Apoie a ENNO e ajude a transformar o Brasil! Sua contribuição é essencial para nossas ações e projetos.</p>
+  <div style="text-align:center;">
+    <a href="#">Doar Agora</a>
+  </div>
+</section>
 
-    <section>
-      <h2>Manifesto</h2>
-      <p>A ENNO acredita em um Brasil onde a fé e a política caminham juntas. Lutamos por justiça social, liberdade, educação de qualidade, segurança e reconstrução dos valores familiares. Nosso movimento nasce do povo e para o povo.</p>
-    </section>
+<section class="contact" id="contact">
+  <h2>Fale Conosco</h2>
+  <form action="https://formspree.io/f/xnnzepdl" method="POST">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu email" required>
+    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 
-    <section>
-      <h2>Contato</h2>
-      <p>Email oficial: <a href="mailto:dr.rique@partidoenno.online" style="color:#d4af37; text-decoration: underline;">dr.rique@partidoenno.online</a></p>
-    </section>
-  </main>
+<footer>
+  <p>ENNO &copy; 2025 - Todos os direitos reservados | Transformando o Brasil com fé e juventude 🙏</p>
+</footer>
 
-  <footer>
-    <p>© 2025 ENNO - Partido Nacional Novo de Oportunidades. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    function toggleMenu() {
-      navMenu.classList.toggle('open');
-      document.body.classList.toggle('menu-open');
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    menuToggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
-    });
-
-    // Fecha menu ao clicar em link
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        document.body.classList.remove('menu-open');
-      });
-    });
-
-    // Fecha menu ao clicar fora (mobile)
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        navMenu.classList.remove('open');
-        document.body.classList.remove('menu-open');
-      }
-    });
-  </script>
+<script>
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('active');
+}
+function closeMenu(){
+  document.getElementById('mobile-menu').classList.remove('active');
+}
+</script>
 </body>
 </html>
