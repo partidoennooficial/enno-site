@@ -4,194 +4,178 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
 <title>ENNO - Partido Cristão Jovem e Nacional de Oportunidades</title>
 <meta name="description" content="ENNO é o partido cristão jovem que transforma o Brasil com fé, integridade e liderança visionária. Conheça nossa missão, equipe e apoie nossa causa.">
-<meta name="keywords" content="ENNO, partido cristão jovem, política jovem Brasil, liderança cristã, fé, integridade, Dr.Rique">
-<meta name="robots" content="index, follow">
 
-<!-- Open Graph / Social Sharing -->
-<meta property="og:title" content="ENNO - Partido Cristão Jovem e Nacional de Oportunidades">
-<meta property="og:description" content="ENNO transforma o Brasil com fé, coragem e integridade. Conheça nossa missão, equipe e apoie nossa causa.">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/78/Pal%C3%A1cio_do_Planalto_GGFD8938.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.enno.com.br/">
-
-<!-- Favicon (opcional) -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 <style>
-/* Reset e overflow */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
 html, body { overflow-x: hidden; scroll-behavior: smooth; }
 body { background: linear-gradient(135deg, #f5f7fa, #d4edda); color: #111; }
 
-/* Header fixo e menu hamburguer */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1e682f;
-  z-index: 1000;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+/* Header - Menu Melhorado */
+header { 
+  position: fixed; top: ; width: 100%; background: linear-gradient(135deg, #28a745, #1e682f); z-index: 1000; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 1px; box-shadow: 0 4px 1px rgba(0,0,0,0.2);
 }
 
-.menu-logo { color:#fff; font-weight:bold; font-size:1.3rem; }
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+.menu-logo { 
+  color:#fff; font-weight:bold; font-size:1.5rem; letter-spacing: 1px; text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: #fff;
-  margin: 4px 0;
-  border-radius: 3px;
-  transition: 0.3s;
+.menu-toggle { 
+  display: none; flex-direction: column; cursor: pointer; z-index: 1010; 
 }
 
-.menu-container {
-  display: flex;
-  gap: 20px;
+.menu-toggle span { 
+  height: 3px; width: 28px; background: #fff; margin: 5px 0; border-radius: 3px; transition: all 0.4s; 
 }
 
-.menu-container a {
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: 0.3s;
+.menu-container { 
+  display: flex; gap: 25px; 
 }
 
-.menu-container a:hover {
-  background: rgba(255,255,255,0.2);
-  border-radius: 5px;
+.menu-container a { 
+  color: #fff; font-weight: bold; padding: 12px 18px; transition: 0.4s; border-radius: 10px; position: relative; text-transform: uppercase; 
 }
 
-/* Hero Section */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/7/78/Pal%C3%A1cio_do_Planalto_GGFD8938.jpg') center/cover no-repeat;
-  color: #fff;
-  position: relative;
-  margin-top: 60px;
+.menu-container a::after { 
+  content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 3px; background: #d4edda; border-radius: 3px; transition: all 0.3s; transform: translateX(-50%); 
 }
+
+.menu-container a:hover::after { width: 80%; }
+
+.menu-container a:hover { background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); }
+
+@media(max-width:768px){
+  .menu-container { 
+    position: fixed; top: 60px; left: -100%; width: 100%; height: calc(100vh - 60px); background: linear-gradient(135deg, #28a745, #1e682f); flex-direction: column; align-items: center; justify-content: center; transition: 0.4s; z-index: 999;
+  }
+  .menu-container.active { left: 0; }
+  .menu-toggle { display: flex; }
+}
+
+/* Hero */
+.hero { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; background: url('https://upload.wikimedia.org/wikipedia/commons/7/78/Pal%C3%A1cio_do_Planalto_GGFD8938.jpg') center/cover no-repeat; color: #fff; position: relative; margin-top: 60px; }
 .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
 .hero-content { position: relative; z-index: 1; }
 .hero h1 { font-size: 3rem; margin-bottom: 20px; }
 .hero p { font-size: 1.5rem; margin-bottom: 30px; }
-.hero a {
-  padding: 15px 30px;
-  background: #28a745;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: 0.3s;
-}
+.hero a { padding: 15px 30px; background: #28a745; color: #fff; font-weight: bold; border-radius: 30px; transition: 0.3s; text-decoration:none; }
 .hero a:hover { background: #218838; }
 
 /* Sections */
 section { padding: 80px 20px; max-width: 1200px; margin: auto; }
 section h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1e682f; }
-.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  flex: 1 1 300px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-.card h3 { margin-bottom: 20px; color: #1e682f; }
-.card p { line-height: 1.6; }
 
-/* Missão */
+
+/* Cards Inicial Melhorado */
+.cards { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 30px; 
+  margin-bottom: 50px; 
+}
+
+.card { 
+  background: linear-gradient(145deg, #f0fff4, #d4edda); /* leve degrade verde */
+  padding: 35px 25px; 
+  border-radius: 25px; 
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
+  flex: 1 1 300px; 
+  position: relative; 
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+}
+
+.card::before { 
+  content: ''; 
+  position: absolute; 
+  top: -50%; left: -50%; 
+  width: 200%; height: 200%; 
+  background: rgba(40,167,69,0.05); 
+  transform: rotate(45deg); 
+  z-index: 0; 
+  transition: all 0.5s; 
+}
+
+.card:hover::before { 
+  top: 0; left: 0; 
+  width: 100%; height: 100%; 
+  background: rgba(40,167,69,0.1); 
+}
+
+.card h3 { 
+  margin-bottom: 20px; 
+  color: #1e682f; 
+  font-size: 1.8rem; 
+  position: relative; 
+  z-index:1; 
+}
+
+.card p { 
+  line-height: 1.6; 
+  position: relative; 
+  z-index:1; 
+  color: #145c23;
+}
+
+.card:hover { 
+  transform: translateY(-10px) scale(1.03); 
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25); 
+}
+
+
+
+
+/* Mission */
 .mission { background: #d4edda; border-radius: 20px; padding: 50px 20px; text-align: center; }
 .mission p { font-size: 1.2rem; }
 
 /* Doação */
 #donate p { text-align: center; margin-bottom: 30px; }
-#donate a {
-  display: inline-block;
-  padding: 20px 40px;
-  background: #28a745;
-  color: #fff;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+#donate a { display: inline-block; padding: 20px 40px; background: #28a745; color: #fff; border-radius: 30px; font-weight: bold; transition: 0.3s; text-decoration:none; }
 #donate a:hover { background: #218838; }
 
 /* Contato */
 .contact form { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: auto; }
-.contact input, .contact textarea {
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  resize: none;
-}
-.contact button {
-  padding: 15px;
-  background: #1e682f;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+.contact input, .contact textarea { padding: 15px; border-radius: 10px; border: 1px solid #ccc; resize: none; }
+.contact button { padding: 15px; background: #1e682f; color: #fff; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; transition: 0.3s; }
 .contact button:hover { background: #145c23; }
 
 /* Footer */
-footer {
-  background: #1e682f;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 50px;
-}
+footer { background: #1e682f; color: #fff; text-align: center; padding: 30px 20px; margin-top: 50px; }
+
+/* Tabs */
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.tab { padding: 10px 20px; background: #28a745; color: #fff; border-radius: 30px; cursor: pointer; font-weight:bold; transition: 0.3s; }
+.tab:hover { background: #218838; }
+.tab.active { background: #145c23; }
+
+.tab-content { display: none; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 800px; margin: auto; }
+.tab-content.active { display: block; }
+
+/* WhatsApp Flutuante */
+#whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 15px 20px; border-radius: 50px; font-weight: bold; text-decoration:none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index:1000; transition:0.3s;}
+#whatsapp:hover { background:#1ebe57; }
 
 /* Responsivo Mobile */
 @media(max-width:768px){
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.2rem; }
   .cards { flex-direction: column; gap: 20px; }
-
   .menu-container { 
-    position: fixed;
-    top: 60px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: #1e682f;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    z-index: 999;
+    position: fixed; top: 60px; left: -100%; width: 100%; height: calc(100vh - 60px); background: #1e682f; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; z-index: 999;
   }
-
   .menu-container.active { left: 0; }
-
   .menu-toggle { display: flex; }
 }
 </style>
 </head>
 <body>
+
 <header>
   <div class="menu-logo">ENNO</div>
   <div class="menu-toggle" onclick="toggleMenu()">
@@ -200,12 +184,12 @@ footer {
     <span></span>
   </div>
   <div class="menu-container" id="mobile-menu">
-    <a href="#home" class="menu-item" onclick="closeMenu()">Início</a>
-    <a href="#about" class="menu-item" onclick="closeMenu()">Sobre</a>
-    <a href="#mission" class="menu-item" onclick="closeMenu()">Missão</a>
-    <a href="#team" class="menu-item" onclick="closeMenu()">Equipe</a>
-    <a href="#donate" class="menu-item" onclick="closeMenu()">Doação</a>
-    <a href="#contact" class="menu-item" onclick="closeMenu()">Contato</a>
+    <a href="#home" onclick="closeMenu()">Início</a>
+    <a href="quem-somos.html" onclick="closeMenu()">Sobre</a>
+    <a href="#mission" onclick="closeMenu()">Missão</a>
+    <a href="#solutions" onclick="closeMenu()">Soluções</a>
+    <a href="#donate" onclick="closeMenu()">Doação</a>
+    <a href="#contact" onclick="closeMenu()">Contato</a>
   </div>
 </header>
 
@@ -217,43 +201,66 @@ footer {
   </div>
 </section>
 
-<section id="about">
-  <h2>Sobre a ENNO</h2>
+
+
+<section class="mission" id="mission">
+  <h2>Missão</h2>
   <div class="cards">
     <div class="card">
-      <h3>Quem Somos</h3>
-      <p>Somos um partido jovem, cristão, que acredita no poder da fé e da integridade para transformar o Brasil.</p>
-    </div>
-    <div class="card">
-      <h3>Nossa Visão</h3>
-      <p>Construir uma nação justa, com oportunidades para todos, valorizando princípios cristãos e cidadãos engajados.</p>
-    </div>
-    <div class="card">
-      <h3>Nossos Valores</h3>
-      <p>Fé, Transparência, Juventude, Liderança e Compromisso com o futuro do país.</p>
+      <p>Ser a voz da juventude cristã, promovendo políticas que transformem vidas e fortaleçam a esperança de um Brasil melhor, seguindo os princípios de Deus.</p>
     </div>
   </div>
 </section>
 
-<section class="mission" id="mission">
-  <h2>Missão</h2>
-  <p>Ser a voz da juventude cristã, promovendo políticas que transformem vidas e fortaleçam a esperança de um Brasil melhor, seguindo os princípios de Deus.</p>
-</section>
-
 <section id="team">
-  <h2>Equipe ENNO</h2>
+  <h2></h2>
   <div class="cards">
     <div class="card">
       <h3>Rique</h3>
-      <p>Fundador e líder visionário. Um chamado profético para liderar com fé e coragem.</p>
+      <p> Fundador da ENNO
+Jovem líder comprometido com um Brasil melhor,
+guiando a ENNO com coragem,
+integridade e visão para transformar vidas.</p>
     </div>
     <div class="card">
-      <h3>Equipe de Estratégia</h3>
-      <p>Profissionais dedicados a implementar políticas e projetos inovadores e cristãos.</p>
+      <h3>Josué 1:9</h3>
+      <p>Seja forte e corajoso.
+      Não tenha medo, nem desanime,
+      porque o Senhor seu Deus está com você por onde você for.</p>
     </div>
     <div class="card">
-      <h3>Voluntários</h3>
-      <p>Jovens engajados que acreditam no propósito da ENNO e estão prontos para servir.</p>
+      <h3>Transformar</h3>
+      <p>Sonho e luto por um Brasil onde a fé guia a coragem, a justiça floresce e cada jovem encontra sua oportunidade de brilhar. - Rique</p>
+    </div>
+  </div>
+</section>
+
+<section id="solutions">
+  <h2>Soluções Práticas</h2>
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('action1', this)">Empreendedorismo</div>
+    <div class="tab" onclick="showTab('action2', this)">Capacitação</div>
+    <div class="tab" onclick="showTab('action3', this)">Apoio Legal</div>
+  </div>
+  <div id="action1" class="tab-content active">
+    <div class="cards">
+      <div class="card">
+        <p>Oferecemos informações e suporte para quem deseja abrir seu negócio, com orientação e dicas práticas.</p>
+      </div>
+    </div>
+  </div>
+  <div id="action2" class="tab-content">
+    <div class="cards">
+      <div class="card">
+        <p>Espaço para cursos, workshops e programas de capacitação gratuitos para jovens e comunidade.</p>
+      </div>
+    </div>
+  </div>
+  <div id="action3" class="tab-content">
+    <div class="cards">
+      <div class="card">
+        <p>Fornecemos orientação e informações sobre apoio legal e direitos do cidadão, ajudando você a se organizar.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -262,8 +269,9 @@ footer {
   <h2>Faça uma Doação</h2>
   <p>Apoie a ENNO e ajude a transformar o Brasil! Sua contribuição é essencial para nossas ações e projetos.</p>
   <div style="text-align:center;">
-    <a href="#">Doar Agora</a>
-  </div>
+    <a href="https://picpay.me/sourique/0.5" target="_blank">Doar Agora</a>
+    
+    </div>
 </section>
 
 <section class="contact" id="contact">
@@ -276,6 +284,9 @@ footer {
   </form>
 </section>
 
+<!-- WhatsApp Flutuante -->
+<a href="https://wa.me/5561981240338" target="_blank" id="whatsapp">WhatsApp</a>
+
 <footer>
   <p>ENNO &copy; 2025 - Todos os direitos reservados | Transformando o Brasil com fé e juventude 🙏</p>
 </footer>
@@ -287,6 +298,16 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById('mobile-menu').classList.remove('active');
 }
+
+// Tabs Soluções Práticas
+function showTab(tabId, el){
+  document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
 </script>
+
 </body>
 </html>
