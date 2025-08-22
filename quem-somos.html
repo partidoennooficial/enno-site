@@ -1,247 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ENNO - Quem Somos</title>
-  <style>
-    /* Reset e fontes */
-    body, html {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(3, 37, 65, 0.85), rgba(3, 37, 65, 0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #f0e6d2;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENNO - Quem Somos</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif; }
+body { background: linear-gradient(135deg, #f5f7fa, #d4edda); color: #111; padding-top:60px; }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      border-bottom: 2px solid #d4af37;
-    }
+/* Header */
+header { position: fixed; top:0; width:100%; background:#1e682f; z-index:1000; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; color:#fff; font-weight:bold; }
+.menu-logo { font-size:1.3rem; }
+.menu-toggle { display:flex; flex-direction:column; cursor:pointer; }
+.menu-toggle span { height:3px; width:25px; background:#fff; margin:4px 0; border-radius:3px; transition:0.3s; }
+.menu-container { display:flex; gap:20px; flex-direction:column; position:fixed; top:60px; left:-100%; width:100%; height:calc(100vh - 60px); background:#1e682f; align-items:center; justify-content:center; transition:0.3s; z-index:999; }
+.menu-container a { color:#fff; text-decoration:none; padding:15px 20px; font-size:1.2rem; transition:0.3s; }
+.menu-container a:hover { background: rgba(255,255,255,0.2); border-radius:5px; }
+.menu-container.active { left:0; }
 
-    header img {
-      max-width: 130px;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 3px #d4af37);
-    }
+/* Tabs */
+.tabs { display:flex; flex-direction:column; gap:15px; margin:40px 20px 20px; }
+.tab { padding:15px; background:#28a745; color:#fff; border-radius:30px; cursor:pointer; font-weight:bold; text-align:center; font-size:1.1rem; transition:0.3s; }
+.tab:hover { background:#218838; }
+.tab.active { background:#145c23; }
 
-    header h1 {
-      font-size: 3.2rem;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #d4af37;
-      text-shadow: 0 0 7px #d4af37;
-    }
+/* Tab Content */
+.tab-content { display:none; margin:0 20px 20px; padding:20px; background:#fff; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+.tab-content.active { display:block; }
 
-    header p {
-      margin-top: 0.4rem;
-      font-size: 1.3rem;
-      font-style: italic;
-      color: #fff9e3;
-      letter-spacing: 1px;
-    }
+/* Card */
+.card { background:#fff; padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.15); margin-bottom:20px; transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.2); }
+.card h3 { color:#1e682f; margin-bottom:10px; font-size:1.4rem; }
+.card p { line-height:1.5; font-size:1rem; }
 
-    nav {
-      background-color: rgba(0,0,0,0.4);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      font-weight: 600;
-      font-size: 1.1rem;
-      border-bottom: 1px solid #d4af37;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #d4af37;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    main {
-      flex: 1;
-      max-width: 900px;
-      margin: 3rem auto 4rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2.5rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #d4af37aa;
-    }
-
-    main h2 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #ffd54f;
-      text-align: center;
-      text-shadow: 0 0 6px #d4af37;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    section h3 {
-      font-size: 1.9rem;
-      margin-bottom: 0.8rem;
-      color: #ffe082;
-      border-bottom: 2px solid #d4af37;
-      padding-bottom: 6px;
-      text-shadow: 0 0 4px #d4af37;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-    }
-
-    ul li {
-      background: #d4af37;
-      color: #003366;
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      box-shadow: 0 0 6px #d4af37aa;
-      flex: 1 1 calc(50% - 1.2rem);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    ul li::before {
-      content: "✝️";
-      font-size: 1.1rem;
-    }
-
-    .btn-join {
-      display: block;
-      width: max-content;
-      margin: 2rem auto 0;
-      background-color: #d4af37;
-      color: #003366;
-      font-weight: 700;
-      font-size: 1.3rem;
-      padding: 0.8rem 2.4rem;
-      border-radius: 40px;
-      text-decoration: none;
-      box-shadow: 0 0 15px #d4af37bb;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-join:hover {
-      background-color: #ffc107;
-      color: #001933;
-      box-shadow: 0 0 20px #ffc107cc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem 1rem;
-      background-color: rgba(0,0,0,0.4);
-      color: #d4af37;
-      font-weight: 600;
-      border-top: 2px solid #d4af37;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        gap: 1rem;
-        font-size: 1rem;
-      }
-      main {
-        margin: 2rem 1rem 3rem;
-        padding: 1.5rem 1rem;
-      }
-      main h2 {
-        font-size: 2rem;
-      }
-      section h3 {
-        font-size: 1.5rem;
-      }
-      ul li {
-        flex: 1 1 100%;
-      }
-      .btn-join {
-        font-size: 1.1rem;
-        padding: 0.7rem 2rem;
-      }
-    }
-  </style>
+/* Responsivo */
+@media(min-width:768px){
+  .tabs { flex-direction:row; justify-content:center; margin:60px 20px 40px; }
+  .tab { font-size:1.2rem; padding:10px 20px; }
+  .card { padding:25px; margin-bottom:25px; }
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <img src="logo-enno.png" alt="Logo ENNO" />
-    <h1>ENNO</h1>
-    <p>Uma nova geração, um novo Brasil.</p>
-  </header>
+<header>
+  
+  <div class="menu-logo">ENNO</div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="menu-container" id="mobile-menu">
+    <a href="Index.html" onclick="closeMenu()">Início</a> <!-- VOLTA PARA A HOME -->
+    <a href="quem-somos.html" onclick="closeMenu()">quem-somos</a>
+  
+  
+  
+  
+  
+  
+</header>
 
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="propostas.html">Propostas</a>
-    <a href="noticias.html">Notícias</a>
-    <a href="junte-se.html">Junte-se a Nós</a>
-    <a href="fe-e-oracao.html">Fé & Oração</a>
-    <a href="contato.html">Contato</a>
-  </nav>
+<section>
+  <h2 style="text-align:center; margin:20px 0 30px; color:#1e682f;">Sobre a ENNO</h2>
+  
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('quem', this)">Quem Somos</div>
+    <div class="tab" onclick="showTab('visao', this)">Nossa Visão</div>
+    <div class="tab" onclick="showTab('valores', this)">Nossos Valores</div>
+  </div>
 
-  <main>
-    <h2>Quem Somos</h2>
+  <div id="quem" class="tab-content active">
+    <div class="card">
+      <h3>Quem Somos</h3>
+      <p>Somos um partido jovem, cristão e visionário, comprometido com fé, integridade e ação prática. Lutamos para que cada jovem tenha voz ativa na política e oportunidades reais. Nosso objetivo é construir um Brasil mais justo e solidário, sempre guiados pelo propósito de Deus e pela transformação social.</p>
+      <p>Queremos inspirar e capacitar novos líderes para que participem ativamente da sociedade e da política, fortalecendo a esperança de um futuro melhor para todos.</p>
+    </div>
+  </div>
 
-    <section>
-      <h3>Nossa História</h3>
-      <p>A ENNO – Partido Nacional Novo de Oportunidades – nasceu do chamado divino para transformar o Brasil, trazendo uma nova geração comprometida com a fé em Jesus Cristo, integridade e justiça social. Somos jovens movidos pelo Espírito Santo, prontos para liderar a mudança que o país precisa.</p>
-    </section>
+  <div id="visao" class="tab-content">
+    <div class="card">
+      <h3>Nossa Visão</h3>
+      <p>Visualizamos um Brasil onde a justiça, a fé e a esperança caminhem juntas. Nossa visão é criar oportunidades concretas para jovens e famílias, garantindo que políticas públicas tragam resultados reais e transformadores.</p>
+      <p>Desejamos ser um modelo de liderança ética, inovação e transparência, mostrando que é possível fazer política com responsabilidade e propósito cristão.</p>
+    </div>
+  </div>
 
-    <section>
-      <h3>Missão e Valores</h3>
-      <ul>
-        <li>Fé inabalável em Deus</li>
-        <li>Integridade acima de tudo</li>
-        <li>Compromisso com a verdade e justiça</li>
-        <li>Valorização da família e da vida</li>
-        <li>Respeito e oportunidades para a juventude</li>
-      </ul>
-    </section>
+  <div id="valores" class="tab-content">
+    <div class="card">
+      <h3>Nossos Valores</h3>
+      <p><strong>Fé:</strong> Deus no centro de cada ação e decisão.</p>
+      <p><strong>Transparência:</strong> recursos e decisões sempre claras e acessíveis.</p>
+      <p><strong>Juventude e Liderança:</strong> incentivando novas ideias, coragem e protagonismo jovem.</p>
+      <p><strong>Compromisso Social:</strong> políticas que impactam vidas e fortalecem comunidades.</p>
+      <p><strong>Integridade:</strong> postura ética e responsável em todas as ações do partido.</p>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h3>Nosso Presidente</h3>
-      <p>Dr.Rique, fundador da ENNO, é um jovem visionário com chamado profético para liderar o Brasil rumo à renovação política e espiritual. Com coragem, fé e a palavra de Deus, ele inspira uma geração a ser protagonista da transformação nacional.</p>
-    </section>
-
-    <section>
-      <h3>Compromisso com o Brasil</h3>
-      <p>Acreditamos que a verdadeira mudança nasce do povo e para o povo. Por isso, nos comprometemos a ouvir, representar e lutar por cada cidadão brasileiro, especialmente jovens e famílias que buscam esperança e justiça.</p>
-    </section>
-
-    <a href="junte-se.html" class="btn-join">Junte-se ao Movimento</a>
-  </main>
-
-  <footer>
-    <p>© 2025 ENNO - Partido Nacional Novo de Oportunidades. Todos os direitos reservados.</p>
-  </footer>
+<script>
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('active');
+}
+function closeMenu(){
+  document.getElementById('mobile-menu').classList.remove('active');
+}
+function showTab(id, el){
+  document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
 
 </body>
 </html>
